@@ -1,13 +1,13 @@
-/**********************************************************************
- * Copyright (c) 2015 Pieter Wuille, Andrew Poelstra                  *
- * Distributed under the MIT software license, see the accompanying   *
- * file COPYING or http://www.opensource.org/licenses/mit-license.php.*
- **********************************************************************/
+/***********************************************************************
+ * Copyright (c) 2015 Pieter Wuille, Andrew Poelstra                   *
+ * Distributed under the MIT software license, see the accompanying    *
+ * file COPYING or https://www.opensource.org/licenses/mit-license.php.*
+ ***********************************************************************/
 
 #include <string.h>
 
-#include "include/secp256k1.h"
-#include "include/secp256k1_ecdh.h"
+#include "../include/secp256k1.h"
+#include "../include/secp256k1_ecdh.h"
 #include "util.h"
 #include "bench.h"
 
@@ -51,6 +51,8 @@ int main(void) {
 
     /* create a context with no capabilities */
     data.ctx = secp256k1_context_create(SECP256K1_FLAGS_TYPE_CONTEXT);
+
+    print_output_table_header_row();
 
     run_benchmark("ecdh", bench_ecdh, bench_ecdh_setup, NULL, &data, 10, iters);
 
