@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/greymass/secp256k1.git", :tag => "0.0.3" }
   s.ios.deployment_target = "12.0"
   s.public_header_files = "include/*.h"
-  s.module_name = "secp256k1"
+  s.module_name = "secp256k1gm"
   s.source_files = "src/secp256k1.c", "src/**/*.h", "include/*.h"
   s.compiler_flags = "-DENABLE_MODULE_ECDH",
                      "-DENABLE_MODULE_RECOVERY",
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
                      "-DECMULT_GEN_PREC_BITS=4",
   "-DECMULT_WINDOW_SIZE=15"
   s.xcconfig = {
-    "HEADER_SEARCH_PATHS" => "$(SRCROOT)/secp256k1-gm $(SRCROOT)/secp256k1-gm/src $(SRCROOT)/secp256k1-gm/include",
+    "HEADER_SEARCH_PATHS" => "$(SRCROOT)/secp256k1gm $(SRCROOT)/secp256k1gm/src $(SRCROOT)/secp256k1gm/include",
     "OTHER_CFLAGS" => "-pedantic -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wstrict-prototypes -Wno-shorten-64-to-32 -Wno-conditional-uninitialized -Wno-unused-function -Wno-long-long -Wno-overlength-strings -O3"
   }
 end
